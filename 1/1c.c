@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-//Função abaixo!
+//funçao abaixo nao copie acima
 int fat(int n)
 {
   if (n <= 1) return 1;
   return n * fat(n - 1);
 }
+//funçao acima nao copie abaixo
 
-//Não copie à partir deste ponto!
-
-
-int main(int argc, char const *argv[]) {
-  int d;
-  scanf("%d", &d);
-  printf("%d\n", fat(d));
-  return 0;
+int main(){ //casos testes
+	printf("%i\n",fat(2)); // funcionou
+	printf("%i\n",fat(1)); // funcionou
+	printf("%i\n",fat(3)); // funcionou
+	printf("%i\n",fat(4)); // funcionou
+	printf("%i\n",fat(5)); // funcionou
+	printf("%i\n",fat(6)); // funcionou
 }
