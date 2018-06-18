@@ -17,7 +17,7 @@ int letterCalc(char str[], char letra, int len)
 //funçao acima nao copie abaixo
 
 int main(){ //casos testes
-	printf("%i\n",letterCalc("caa", 'a', 3));                //Funcionou
+  printf("%i\n",letterCalc("caa", 'a', 3));                //Funcionou
 	printf("%i\n",letterCalc("abcdebfgop", 'b', 10));        //Funcionou
   printf("%i\n",letterCalc("Meu nome e caio.", 'e', 16));  //Funcionou
 	printf("%i\n",letterCalc("batata", 'e', 6));             //Funcionou
