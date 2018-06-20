@@ -3,8 +3,43 @@
 
 void na() {printf("N\n");}
 void si() {printf("S\n");}
+int parte(int n,int nv[],int m,int mv[]){  //verifica ate onde é igual e depois soma
+	int regra = 1,ct =1,cta = 0,x;
+	if(m > n) return 0;
+	for(int i = 0;i < n;i++){ //pega ate onde tem diferença
+		if(nv[i] != mv[i]) break;
+		else cta++;
+	}
+	x = cta+((n-cta)/2);
+	for(int i = 0;i < x;i++){
+		if(regra){
+			if(nv[i] != mv[i]){
+			regra = 0;
+			i--; //volta um passo
+			}
+		}
+		else{
+			nv[i] += nv[n - ct];
+			ct++;
+		}
+	}
+	regra = 1;
+
+	for(int i = 0;i<m;i++){
+		if(nv[i] != mv[i]){
+			return parte(x,nv,m,mv);
+		}
+	}
+
+	return 1;
+}
 int main(){
-	int n,m,nv[15],mv[15],teste1 = 0,teste2 = 0,regra = 1;
+	//n tamanho do primeiro vetor, m tamanho do segundo vetor
+	//nv primeiro vetor, mv segundo vetor
+	//nvinv e mvinv sao as matrizes invertidas
+	//teste1 e 2 sao axuliares
+	//regra chave universal
+	int n,m,nv[15],mv[15],nvinv[15],teste1 = 0,teste2 = 0,regra = 1;
 	scanf(" %i",&n);
 	for(int i = 0;i<n;i++){
 		scanf(" %i",&nv[i]);
@@ -51,7 +86,24 @@ int main(){
 			else na(); //se os vetores tem o mesmo tamanho e nao cairam nos casos anteriores, nao ha solução
 		}
 	}
-	//ate aqui funciona
+	//Começo semelhante
+	//parte n nv m mv
+	if(parte(n,nv,m,mv)){
+		si();
+		return 0;
+	}
+	else{
+		teste1 = 0;
+		for(int i = (n-1);i > 0;i--){
+			nvinv[teste1] = nv[i];
+			teste1++;
+		}
+		printf("queiroz\n");
+		for(int i = 0;i < n;i++){
+			printf("%d ",nv[i]);
+		}
+
+	}
 
 
 
