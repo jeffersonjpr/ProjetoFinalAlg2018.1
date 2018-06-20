@@ -1,8 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void na() {printf("N\n");}
-void si() {printf("S\n");}
+void na() {
+	printf("N\n");
+	exit(0);
+}
+void si() {
+	printf("S\n");
+	exit(0);
+}
+
 int parte(int n,int nv[],int m,int mv[]){  //verifica ate onde é igual e depois soma
 	int regra = 1,ct =1,cta = 0,x;
 	if(m > n) return 0;
@@ -44,6 +51,7 @@ int main(){
 	for(int i = 0;i<n;i++){
 		scanf(" %i",&nv[i]);
 		teste1+=nv[i];
+		nvinv[i] = nv[i];
 	}
 	scanf(" %i",&m);
 	for(int i = 0;i<m;i++){
@@ -53,16 +61,11 @@ int main(){
 
 	//se a soma de todos os elementos forem diferentes, nao ha solução
 	// se a segunda fita for maior que a primeira nao ha soluçao
-	if(teste1 != teste2 || n < m) {
-		na();
-		return 0;
+	if(teste1 != teste2 || n < m) na();
 
-	}
 	//se o segundo vetor possuir apenas uma variavel, e o somatorio de todos os elementos de ambos os vetores forem iguals, ha solução;
-	if(m == 1 && teste1 == teste2){
-		si();
-		return 0;
-	}
+	if(m == 1) si();
+
 	//vetor tamanhos iguals
 	if(m == n){
 		for(int i =0;i<n;i++){
@@ -86,23 +89,19 @@ int main(){
 			else na(); //se os vetores tem o mesmo tamanho e nao cairam nos casos anteriores, nao ha solução
 		}
 	}
+
 	//Começo semelhante
 	//parte n nv m mv
-	if(parte(n,nv,m,mv)){
-		si();
-		return 0;
-	}
+	if(parte(n,nv,m,mv)) si();
+
+
 	else{
-		teste1 = 0;
-		for(int i = (n-1);i > 0;i--){
-			nvinv[teste1] = nv[i];
-			teste1++;
-		}
-		printf("queiroz\n");
-		for(int i = 0;i < n;i++){
-			printf("%d ",nv[i]);
+		for(int i = 0;i < n;i++){ //inverte a ordem do primeiro vetor
+			nv[i] = nvinv[n - i - 1];
 		}
 
+		if(parte(n,nv,m,mv)) si();
+		else na();
 	}
 
 
