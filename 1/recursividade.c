@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "recursividade.h"
+
 //Multiplicação entre dois termos
 int mult (int a, int b)
 {
@@ -9,7 +10,8 @@ int mult (int a, int b)
 }
 
 //Potência entre dois termos
-int pot(int a,int b){ //a elevado a b
+int pot(int a,int b) //a elevado a b
+{
 	if(b <= 0) return 1;
 	return a*pot(a,b-1);
 }
@@ -58,7 +60,8 @@ int letterCalc(char str[], char letra, int len)
 }
 
 //Soma dos elementos do triangulo superior de uma matriz m
-int trisup(int tamanho,int m[][tamanho],int l,int c){
+int trisup(int tamanho,int m[][tamanho],int l,int c)
+{
     if(l >= tamanho-1 && c >= tamanho-1) return 0;
     if(c == tamanho-1) return m[l][c] + trisup(tamanho,m,l+1,0);
     if(l >= c) return trisup(tamanho,m,l,c+1);
