@@ -26,14 +26,14 @@ int parte(int n,int nv[],int m,int mv[]){  //verifica ate onde é igual e depois
 			}
 		}
 		else{
-			nv[i] += nv[n - ct];
+			nv[i] += nv[n - ct]; //pega o ultimo e soma com o atual
 			ct++;
 		}
 	}
 	regra = 1;
 
 	for(int i = 0;i<m;i++){
-		if(nv[i] != mv[i]){
+		if(nv[i] != mv[i]){//ve se estao todos iguais no tamnho de m
 			return parte(x,nv,m,mv);
 		}
 	}
