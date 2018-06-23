@@ -16,3 +16,16 @@ int main(){ //casos testes
 	printf("%i\n",fib(10)); // funcionou
 	printf("%i\n",fib(11)); // funcionou
 }
+
+/*
+	1 - 3 ---> 1
+	4 ---> 2   | fib(2)+fib(3) ---> 1+1
+	5 ---> 3   | fib(4)+fib(3) ---> 2+1
+	6 ---> 5   | fib(5)+fib(4) ---> 3+2
+	7 ---> 8   | fib(6)+fib(5)
+	8 ---> 13  | fib(7)+fib(6)
+	9 ---> 24	 | fib(8)+fib(7)
+	n ---> fib(n)
+
+
+*/

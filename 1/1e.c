@@ -5,12 +5,9 @@ void getPares (int n)
 {
   if(n == 0)
     printf("0\n");
-  else if (n % 2 == 0){
+  else if (n % 2 == 0)
     printf("%d ", n);
     getPares(n - 1);
-  } else {
-    getPares(n - 1);
-  }
 }
 //funçao acima nao copie abaixo
 
