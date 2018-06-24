@@ -33,11 +33,12 @@ int fib(int n){
 //Todos os pares antes de dado número, incluindo o mesmo
 void getPares (int n)
 {
-  if(n == 0)
+  if(n <= 0)
     printf("0\n");
-  else if (n % 2 == 0)
-    printf("%d ", n);
-    getPares(n - 1);
+  else {
+      if (n % 2 == 0) printf("%d ", n);
+      getPares(n - 1);
+    }
 }
 
 //Soma de todos os valores impares ate dado número

@@ -1,4 +1,4 @@
-#include "recursividade.c"
+//#include "recursividade.c"
 
 int mult (int a, int b);
 

@@ -16,8 +16,8 @@ int retInd(int vet[], int tam, int i, int k)
 //funçao acima nao copie abaixo
 
 int main(){ //casos testes
-  int n[10] = {1,2,3,4,5,6,7,8,9,10};
-  printf("%d\n", retInd(n, 10, 0, 5)); // passou
-  int m[20] = {51,51,471,58892,8941,98,51,562,51,5812,51,581,581,51,581,3,5,7,58,56};
-  printf("%d\n", retInd(m, 20, 0, 581)); // passou
+  int na[10] = {1,2,3,4,5,6,7,8,9,10};
+  printf("%d\n", retInd(na, 10, 0, 5)); // passou
+  int ma[20] = {51,51,471,58892,8941,98,51,562,51,5812,51,581,581,51,581,3,5,7,58,56};
+  printf("%d\n", retInd(ma, 20, 0, 581)); // passou
 }
