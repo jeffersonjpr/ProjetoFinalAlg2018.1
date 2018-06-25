@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int mdc(int x,int y){
 	if(x > y) return mdc(x-y,y);
@@ -7,7 +8,8 @@ int mdc(int x,int y){
 	return x;
 }
 int main(){
-	int x,y;
+	int x,y,z;
+	srand(time(NULL));
 	for(int i = 0;i<15;i++){
 		x = rand() % 100;
 		y = rand() % 100;
